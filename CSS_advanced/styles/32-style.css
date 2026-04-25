@@ -62,7 +62,7 @@
   --button-hover-text-decoration: none;
   --button-hover-background: var(--color-primary);
 
-  /* TASK 32 */
+  /* TRANSITIONS */
   --transition-duration: .3s;
   --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
@@ -108,8 +108,7 @@ a:active {
   font-size: var(--button-font-size);
   color: var(--button-color);
   text-decoration: var(--button-text-decoration);
-  transition-duration: var(--transition-duration);
-  transition-property: color, background-color;
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .button:hover {
@@ -211,6 +210,7 @@ ul.row {
   position: relative;
 }
 
+/* NAV EFFECT */
 .nav .nav-link::before {
   content: "";
   position: absolute;
@@ -297,6 +297,20 @@ ul.row {
   color: var(--color-primary);
 }
 
+.card-testimonial .card-quote {
+  position: relative;
+}
+
+.card-testimonial .card-quote::before {
+  content: "\201C";
+  position: absolute;
+  top: -4.5rem;
+  left: -1rem;
+  color: #efeded;
+  font-size: 10rem;
+  z-index: -1;
+}
+
 /* HERO */
 .section-hero {
   background-size: 90rem auto;
@@ -311,7 +325,7 @@ ul.row {
 }
 
 /* =======================
-   WORK SECTION
+   WORK SECTION (FINAL FIXED)
 ======================= */
 
 .card-work .card-outer {
@@ -325,11 +339,11 @@ ul.row {
   width: 100%;
   object-fit: cover;
   vertical-align: bottom;
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
-.card-work:hover .card-image {
+.card-work:hover .card-image img {
   transform: scale(1.2);
-  transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .card-work:hover .card-outer {
@@ -374,22 +388,4 @@ ul.row {
 
 .card-work:hover .card-title {
   opacity: 1;
-}
-
-/* =======================
-   QUOTES
-======================= */
-
-.card-testimonial .card-quote {
-  position: relative;
-}
-
-.card-testimonial .card-quote::before {
-  content: "\201C";
-  position: absolute;
-  top: -4.5rem;
-  left: -1rem;
-  color: #efeded;
-  font-size: 10rem;
-  z-index: -1;
 }
