@@ -60,16 +60,10 @@
   box-sizing: border-box;
 }
 
-/* =======================
-   HTML
-======================= */
 html {
   font-size: 62.5%;
 }
 
-/* =======================
-   BODY
-======================= */
 body {
   color: var(--text-color);
   font-family: var(--font-family-base);
@@ -78,9 +72,7 @@ body {
   line-height: var(--line-height-base);
 }
 
-/* =======================
-   LINKS
-======================= */
+/* LINKS */
 a {
   color: var(--text-color);
   text-decoration: none;
@@ -92,28 +84,6 @@ a:hover {
 
 a:active {
   background-color: var(--color-light-grey);
-}
-
-/* =======================
-   SECTION TAGLINE
-======================= */
-.section-tagline {
-  margin: var(--section-tagline-margin);
-  font-family: var(--font-family-title);
-  text-transform: var(--section-tagline-transform);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-}
-
-/* =======================
-   SECTION TITLE
-======================= */
-.section-title {
-  font-family: var(--font-family-title);
-  font-size: var(--font-size-xx-large);
-  font-weight: var(--font-weight-bold);
-  margin: 0;
-  color: var(--color-black);
 }
 
 /* =======================
@@ -135,6 +105,25 @@ a:active {
 .section-footer {
   padding: var(--section-footer-padding);
   text-align: var(--section-footer-align);
+}
+
+/* =======================
+   TITLES
+======================= */
+.section-tagline {
+  margin: var(--section-tagline-margin);
+  font-family: var(--font-family-title);
+  text-transform: var(--section-tagline-transform);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.section-title {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-xx-large);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  color: var(--color-black);
 }
 
 /* =======================
@@ -224,14 +213,6 @@ ul.row {
 }
 
 /* =======================
-   HEADINGS
-======================= */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-title);
-  font-weight: var(--font-weight-bold);
-}
-
-/* =======================
    DARK THEME
 ======================= */
 [data-section-theme="dark"] {
@@ -244,17 +225,15 @@ h1, h2, h3, h4, h5, h6 {
    TASK 23 FIXES
 ======================= */
 
-/* Footer address */
 .footer-address {
   color: var(--text-color);
 }
 
-/* Social link */
 .social-link {
   display: block;
 }
 
-/* Social link SVG */
+/* FIX: include svg properly inside */
 .social-link svg {
   fill: var(--text-color);
 }
