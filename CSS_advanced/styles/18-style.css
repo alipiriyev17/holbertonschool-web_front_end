@@ -1,8 +1,5 @@
-/* Based on styles/17-style.css */
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 
-/* =======================
-   ROOT VARIABLES
-======================= */
 :root {
   --color-primary: #d73953;
   --color-black: #090909;
@@ -28,6 +25,11 @@
   --line-height-base: 1.5;
   --line-height-big: 1.8;
 
+  --section-title-margin: 0;
+  --section-title-color: var(--color-black);
+  --section-header-align: center;
+  --section-tagline-transform: uppercase;
+
   --section-padding: 5rem 0;
   --section-header-padding: 0 0 3rem;
   --section-body-padding: 0 0 3rem;
@@ -35,9 +37,7 @@
   --section-footer-align: center;
   --footer-padding: 5rem 0 1rem;
 
-  /* =======================
-     TASK 18 NAV VARIABLES
-  ======================= */
+  /* TASK 18 */
   --nav-item-font-family: var(--font-family-title);
   --nav-item-font-weight: var(--font-weight-bold);
   --nav-item-font-size: var(--font-size-medium);
@@ -47,21 +47,19 @@
   --nav-item-link-hover: var(--color-primary);
 }
 
-/* =======================
-   GLOBAL BOX MODEL
-======================= */
-html {
-  font-size: 62.5%;
+/* UNIVERSAL BOX SIZING */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
+/* HTML */
+html {
+  font-size: 62.5%;
 }
 
-/* =======================
-   BODY
-======================= */
+/* BODY */
 body {
   color: var(--text-color);
   font-family: var(--font-family-base);
@@ -70,38 +68,98 @@ body {
   line-height: var(--line-height-base);
 }
 
-/* =======================
-   LINKS
-======================= */
+/* LINKS */
 a {
   color: var(--text-color);
   text-decoration: none;
 }
 
-/* =======================
-   SECTION TAGLINE
-======================= */
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  background-color: var(--color-light-grey);
+}
+
+/* SECTION TAGLINE */
 .section-tagline {
+  font-family: var(--font-family-title);
+  text-transform: var(--section-tagline-transform);
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary);
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-xx-large);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+  color: var(--color-black);
+}
+
+/* SECTION */
+.section {
+  padding: var(--section-padding);
+}
+
+/* SECTION HEADER */
+.section-header {
+  padding: var(--section-header-padding);
+  text-align: center;
+}
+
+/* SECTION BODY */
+.section-body {
+  padding: var(--section-body-padding);
+}
+
+/* SECTION FOOTER */
+.section-footer {
+  padding: var(--section-footer-padding);
+  text-align: var(--section-footer-align);
+}
+
+/* CONTAINER */
+.container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CARD CATEGORY */
+.card-category {
+  color: var(--color-primary);
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-bold);
+}
+
+/* FOOTER */
+.footer {
+  padding: var(--footer-padding);
 }
 
 /* =======================
    NAVBAR
 ======================= */
+
 .navbar-menu {
   float: right;
 }
 
-/* NAV RESET */
-nav {
+.nav {
   margin: 0;
   padding: 0;
-  text-align: center;
   list-style: none;
+  text-align: center;
 }
 
-/* NAV ITEMS */
-nav .nav-item {
+.nav .nav-item {
   font-family: var(--nav-item-font-family);
   font-weight: var(--nav-item-font-weight);
   font-size: var(--nav-item-font-size);
@@ -110,13 +168,11 @@ nav .nav-item {
   margin: var(--nav-item-margin);
 }
 
-/* NAV LINKS */
-nav .nav-link {
+.nav .nav-link {
   display: block;
-  padding: calc(var(--font-size-small) / 2) var(--font-size-small);
+  padding: 0.5rem 1rem;
 }
 
-/* HOVER STATE */
-nav .nav-link:hover {
+.nav .nav-link:hover {
   color: var(--nav-item-link-hover);
 }
